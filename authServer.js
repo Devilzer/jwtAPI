@@ -35,7 +35,7 @@ app.post("/token", (req, res) => {
       return res.status(403);
     }
     const accessToken = jwt.sign(
-      { nme: user.name },
+      { name: user.name },
       process.env.AUTH_SECRET_KEY,
       { expiresIn: "30s" }
     );
